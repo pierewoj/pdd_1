@@ -1,4 +1,4 @@
-rm -rf /tmp/hadoop
+rm -rf /tmp/hadoop*
 mkdir /tmp/hadoop
 tar -xf ~/Download/hadoop-2.7.2.tar.gz -C /tmp/hadoop
 mv /tmp/hadoop/hadoop-2.7.2/* /tmp/hadoop
@@ -34,11 +34,6 @@ cat <<EOF > ${HADOOP_PREFIX}/etc/hadoop/mapred-site.xml
 <name>mapreduce.framework.name</name>
 <value>yarn</value>
 </property>
-
-  <property>
-      <name>mapred.child.java.opts</name>
-          <value>-Xmx1024m</value>
-	    </property>
 </configuration>
 EOF
 
