@@ -28,20 +28,3 @@ cat <<EOF > ${HADOOP_PREFIX}/etc/hadoop/hdfs-site.xml
 </configuration>
 EOF
 
-cat <<EOF > ${HADOOP_PREFIX}/etc/hadoop/mapred-site.xml
-<configuration>
-<property>
-<name>mapreduce.framework.name</name>
-<value>yarn</value>
-</property>
-</configuration>
-EOF
-
-cat <<EOF > ${HADOOP_PREFIX}/etc/hadoop/yarn-site.xml
-<configuration>
-<property>
-<name>yarn.nodemanager.aux-services</name>
-<value>mapreduce_shuffle</value>
-</property>
-</configuration>
-EOF

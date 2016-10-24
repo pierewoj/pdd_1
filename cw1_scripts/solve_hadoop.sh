@@ -1,3 +1,4 @@
+export _JAVA_OPTIONS=-Xmx6000m
 for f in ` find . -name '*.in'`
 do
   n=$(basename "$f")
