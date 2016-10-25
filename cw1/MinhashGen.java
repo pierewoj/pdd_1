@@ -16,9 +16,9 @@ public class MinhashGen {
 
 	public int prime[] = new int[100];
 
-	public int hash(int i, int n, int maxVal) {
+	public int hash(int i, int n) {
 		long mult = (new Long(prime[i])) * new Long(n);
-		return (int) (mult % new Long(maxVal));
+		return (int) (mult % new Long(1000409));
 	}
 
 	public MinhashGen() {
@@ -68,12 +68,14 @@ public class MinhashGen {
 			// computing h_i[row]
 			int hashRow[] = new int[100];
 			for (int i = 0; i < 100; i++)
-				hashRow[i] = hash(i, numRow, numCols);
-
+				hashRow[i] = hash(i, numRow);
+			
 			for (int col : cols) {
 				for (int i = 0; i < 100; i++) {
 					if (hashRow[i] < M[i][col])
+					{
 						M[i][col] = hashRow[i];
+					}
 				}
 			}
 		}
